@@ -1,0 +1,8 @@
+<div>
+  <ul class="ngx-presets-list">
+    <li *ngFor="let preset of presets" (click)="setPresetPeriod(preset)"> {{preset.presetLabel}} </li>
+  </ul>
+  <!-- <div *ngFor="let preset of presets">
+    <button mat-button color="primary" style="width:100%" (click)="setPresetPeriod(preset)">{{preset.presetLabel}}</button>
+  </div> -->
+</div>

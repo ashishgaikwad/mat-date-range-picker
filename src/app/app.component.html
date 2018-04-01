@@ -1,0 +1,13 @@
+<div style="text-align:center">
+
+  <p>
+    From: {{range.fromDate|date}} To: {{range.toDate|date}} 
+  </p>
+
+  <p>
+    <ngx-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options"></ngx-drp>
+  </p>
+
+
+</div>
+

@@ -1,0 +1,10 @@
+/* .mat-drp-date-display {
+    min-width: 150px;
+    max-width: 220px;
+    width: 100%;
+} */
+
+.mat-drp-date-input {
+    text-overflow: ellipsis;
+    color: royalblue;
+}

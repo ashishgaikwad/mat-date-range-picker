@@ -1,0 +1,24 @@
+.calendar-container {
+    display: flex;
+    justify-content: space-around;
+    min-width: 650px;
+    height: 300px;
+}
+
+.calendar-item {
+    flex-basis: 33.33%;
+    min-width: 210px;
+    padding: 1em;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mat-drp-menu {
+    height: 100%;
+}
+.mat-drp-controls {
+    display: flex;
+    justify-content: space-around;
+    margin: 10% auto;
+}
