@@ -1,10 +1,8 @@
-/* .mat-drp-date-display {
-    min-width: 150px;
-    max-width: 220px;
-    width: 100%;
-} */
+.ngx-mat-drp-date-display {
+    min-width: 230px;
+}
 
-.mat-drp-date-input {
+.ngx-mat-drp-date-input {
     text-overflow: ellipsis;
     color: royalblue;
 }

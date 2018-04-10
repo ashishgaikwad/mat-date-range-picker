@@ -8,9 +8,9 @@ import { takeWhile } from 'rxjs/operators';
 
 
 const DEFAULT_CONFIG: CalendarDialogConfig = {
-  panelClass:'dark-backdrop',
+  panelClass:'ngx-mat-drp-overlay',
   hasBackdrop:true,
-  backdropClass:'calendar-dialog-backdrop',
+  backdropClass:'ngx-mat-drp-overlay-backdrop',
   shouldCloseOnBackdropClick:true
 }
 

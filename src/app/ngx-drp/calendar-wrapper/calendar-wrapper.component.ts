@@ -18,8 +18,8 @@ export class CalendarWrapperComponent implements OnChanges {
   @Input() prefix:string;
   @Input() minDate:Date;
   @Input() maxDate:Date;
-  private weekendFilter = (d:Date) => true;
-  private dateFormat:string;
+  weekendFilter = (d:Date) => true;
+  dateFormat:string;
 
   constructor(private configStore:ConfigStoreService) { 
     this.dateFormat = configStore.ngxDropOptions.format;

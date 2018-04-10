@@ -1,10 +1,12 @@
 <div> 
   
-  <mat-form-field class="mat-drp-date-display">
-    <input class="mat-drp-date-input"
+  <mat-form-field class="ngx-mat-drp-date-display">
+    <input class="ngx-mat-drp-date-input"
           matInput placeholder="Choose a date"
           [value]="selectedDateRange"
           [matTooltip]="selectedDateRange"
+          (click)="openCalendar($event)"
+          readonly
           #calendarInput >
     <mat-icon matSuffix 
           svgIcon="ngx-calendar"

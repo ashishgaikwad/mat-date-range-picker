@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter, Input, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter, Input, OnDestroy, AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { CalendarOverlayService } from '../services/calendar-overlay.service';
@@ -15,18 +15,20 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'ngx-drp',
   templateUrl: './ngx-drp.component.html',
   styleUrls: ['./ngx-drp.component.css'],
-  providers:[DatePipe]
+  providers:[DatePipe],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewInit {
+export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   @ViewChild('calendarInput') calendarInput;
   @Output() readonly selectedDateRangeChanged: EventEmitter<Range> = new EventEmitter<Range>();
-  @Input() private options:NgxDrpOptions;
+  @Input() options:NgxDrpOptions;
   private $rangeUpdateSub:Subscription;
   private selectedDateRange:string = "";
 
 
   constructor(
+    private changeDetectionRef:ChangeDetectorRef,
     private calendarOverlayService: CalendarOverlayService,
     private rangeStoreService:RangeStoreService,
     private configStoreService:ConfigStoreService,
@@ -49,6 +51,9 @@ export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewInit {
         this.selectedDateRangeChanged.emit(range);
       }
     );
+
+    this.rangeStoreService.updateRange(this.options.range.fromDate, this.options.range.toDate);
+    this.changeDetectionRef.detectChanges();
   }
   
   ngOnDestroy() {
@@ -59,12 +64,25 @@ export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewInit {
     return this.datePipe.transform(date, format);
   }  
 
-  ngAfterViewInit(){
-    let x = () => this.rangeStoreService.updateRange(this.options.range.fromDate, this.options.range.toDate);
+  ngAfterViewChecked(){
+    
   }
 
   openCalendar(event){
     const overlayRef:OverlayRef =  this.calendarOverlayService.open({}, this.calendarInput);
+  }
+
+  valueChanged(event) {
+    let [fromDateStr, toDateStr] = event.target.value.split("-");
+    if(fromDateStr && toDateStr) {
+      let fromDate = new Date(fromDateStr);
+      let toDate = new Date(toDateStr);
+      this.rangeStoreService.updateRange(fromDate, toDate);
+    }
+    else {
+      this.rangeStoreService.updateRange();
+      throw new Error("From and To date string shold be")
+    }
   }
 
 }

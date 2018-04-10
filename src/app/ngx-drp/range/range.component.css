@@ -1,11 +1,11 @@
-.calendar-container {
+.ngx-mat-drp-calendar-container {
     display: flex;
     justify-content: space-around;
     min-width: 650px;
     height: 300px;
 }
 
-.calendar-item {
+.ngx-mat-drp-calendar-item {
     flex-basis: 33.33%;
     min-width: 210px;
     padding: 1em;
@@ -14,10 +14,10 @@
     font-weight: 400;
 }
 
-.mat-drp-menu {
+.ngx-mat-drp-menu {
     height: 100%;
 }
-.mat-drp-controls {
+.ngx-mat-drp-controls {
     display: flex;
     justify-content: space-around;
     margin: 10% auto;

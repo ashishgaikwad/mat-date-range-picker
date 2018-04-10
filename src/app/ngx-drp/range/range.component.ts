@@ -18,7 +18,9 @@ export class RangeComponent implements OnInit {
   toMinDate:Date;
   toMaxDate:Date;
   presets:Array<PresetItem> = [];
-  
+  applyLabel:string;
+  cancelLabel:string;
+
   constructor(
     private rangeStoreService:RangeStoreService,
     private configStoreService:ConfigStoreService,
@@ -28,6 +30,8 @@ export class RangeComponent implements OnInit {
   ngOnInit() {
     this.fromDate = this.rangeStoreService.fromDate;
     this.toDate = this.rangeStoreService.toDate;
+    this.applyLabel = this.configStoreService.ngxDropOptions.applyLabel || "Apply";
+    this.cancelLabel = this.configStoreService.ngxDropOptions.cancelLabel || "Cancel";
     this.presets = this.configStoreService.ngxDropOptions.presets;
     ({fromDate:this.fromMinDate, toDate:this.fromMaxDate} = this.configStoreService.ngxDropOptions.fromMinMax);
     ({fromDate:this.toMinDate, toDate:this.toMaxDate} = this.configStoreService.ngxDropOptions.toMinMax);

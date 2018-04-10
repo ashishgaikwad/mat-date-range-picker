@@ -1,11 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { PresetItem } from '../model/model';
 
 @Component({
   selector: 'mat-drp-presets',
   templateUrl: './presets.component.html',
   styleUrls: ['./presets.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class PresetsComponent implements OnInit {
   

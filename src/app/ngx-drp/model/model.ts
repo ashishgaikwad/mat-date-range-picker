@@ -24,5 +24,7 @@ export interface NgxDrpOptions {
     locale?:string;
     fromMinMax?:Range;
     toMinMax?:Range;
+    applyLabel?:string;
+    cancelLabel?:string;
 
 }
