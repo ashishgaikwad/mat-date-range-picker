@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.demo-main {
+    /* text-align: center; */
+    margin: 5% 0 0 10%;
+}
+
+.demo-box {
+    padding: 2% 0 2% 0;
+}
+
+.demo-rule {
+    margin-right: 10%;
+}
+
 .ngx-mat-drp-overlay {
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
     background: white;
@@ -12,14 +25,11 @@
     opacity: 0.2;
 }
 
-ul.ngx-mat-drp-presets-list li {
+.ngx-mat-drp-menu .ngx-mat-drp-presets-list li {
     margin: 5px 0 5px 0;
     padding: 4%;
     cursor: pointer;
     background: #fafafa;
     color: #53b53f;
     user-select: none;
-    -webkit-user-select: none; /* for safari & chrome browsers */
-    -moz-user-select: none; /* for mozilla browsers */
-    -ms-user-select: none; /* for IE10+ */
 }

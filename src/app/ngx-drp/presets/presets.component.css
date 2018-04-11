@@ -1,25 +1,19 @@
-ul.ngx-mat-drp-presets-list {
-    font-family: Roboto,"Helvetica Neue",sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+.ngx-mat-drp-presets-list {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
 }
 
-ul.ngx-mat-drp-presets-list li {
+.ngx-mat-drp-presets-list li {
     margin: 5px 0 5px 0;
     padding: 4%;
     cursor: pointer;
     background: #fafafa;
     color: #3f51b5;
     user-select: none;
-    -webkit-user-select: none; /* for safari & chrome browsers */
-    -moz-user-select: none; /* for mozilla browsers */
-    -ms-user-select: none; /* for IE10+ */
 }
 
-ul.ngx-mat-drp-presets-list li:hover {
+.ngx-mat-drp-presets-list li:hover {
     background: #3f51b5;
     color: #fff;
 }

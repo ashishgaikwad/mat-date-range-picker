@@ -5,8 +5,8 @@ import { PresetItem } from '../model/model';
   selector: 'mat-drp-presets',
   templateUrl: './presets.component.html',
   styleUrls: ['./presets.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  changeDetection: ChangeDetectionStrategy.OnPush
+  //encapsulation: ViewEncapsulation.None
 })
 export class PresetsComponent implements OnInit {
   

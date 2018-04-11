@@ -1,12 +1,13 @@
-<div style="text-align:center">
+<div class="demo-main">
 
-  <p>
-    From: {{range.fromDate|date}} To: {{range.toDate|date}} 
-  </p>
-
-  <p>
+  <div class="demo-box">
+    Selected date from: {{range.fromDate|date}} to: {{range.toDate|date}} 
+  </div>
+  <hr class="demo-rule">
+  <div class="demo-box">
     <ngx-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options"></ngx-drp>
-  </p>
+  </div>
+  
 
 
 </div>
