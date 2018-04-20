@@ -15,15 +15,15 @@ export class CalendarWrapperComponent implements OnChanges {
   @Output() readonly selectedDateChange:EventEmitter<Date> = new EventEmitter<Date>();
 
   @Input() selectedDate:Date;
-  @Input() prefix:string;
+  @Input() prefixLabel:string;
   @Input() minDate:Date;
   @Input() maxDate:Date;
   weekendFilter = (d:Date) => true;
   dateFormat:string;
 
   constructor(private configStore:ConfigStoreService) { 
-    this.dateFormat = configStore.ngxDropOptions.format;
-    if(configStore.ngxDropOptions.excludeWeekends) {
+    this.dateFormat = configStore.ngxDrpOptions.format;
+    if(configStore.ngxDrpOptions.excludeWeekends) {
       this.weekendFilter = (d: Date): boolean => {
           const day = d.getDay();
           return day !== 0 && day !== 6;

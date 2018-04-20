@@ -30,11 +30,11 @@ export class RangeComponent implements OnInit {
   ngOnInit() {
     this.fromDate = this.rangeStoreService.fromDate;
     this.toDate = this.rangeStoreService.toDate;
-    this.applyLabel = this.configStoreService.ngxDropOptions.applyLabel || "Apply";
-    this.cancelLabel = this.configStoreService.ngxDropOptions.cancelLabel || "Cancel";
-    this.presets = this.configStoreService.ngxDropOptions.presets;
-    ({fromDate:this.fromMinDate, toDate:this.fromMaxDate} = this.configStoreService.ngxDropOptions.fromMinMax);
-    ({fromDate:this.toMinDate, toDate:this.toMaxDate} = this.configStoreService.ngxDropOptions.toMinMax);
+    this.applyLabel = this.configStoreService.ngxDrpOptions.applyLabel || "Apply";
+    this.cancelLabel = this.configStoreService.ngxDrpOptions.cancelLabel || "Cancel";
+    this.presets = this.configStoreService.ngxDrpOptions.presets;
+    ({fromDate:this.fromMinDate, toDate:this.fromMaxDate} = this.configStoreService.ngxDrpOptions.fromMinMax);
+    ({fromDate:this.toMinDate, toDate:this.toMaxDate} = this.configStoreService.ngxDrpOptions.toMinMax);
   }
 
   updateFromDate(date) {

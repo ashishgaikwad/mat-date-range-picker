@@ -1,11 +1,20 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { CalendarOverlayService } from './calendar-overlay.service';
+import { Overlay } from '@angular/cdk/overlay';
+
+
+class MockOverlay {
+
+}
+
 
 describe('CalendarOverlayService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CalendarOverlayService]
+      providers: [
+        {provide:Overlay, useClass:MockOverlay},
+        CalendarOverlayService]
     });
   });
 

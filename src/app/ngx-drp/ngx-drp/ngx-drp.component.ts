@@ -42,7 +42,7 @@ export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   ngOnInit() {
-    this.configStoreService.ngxDropOptions = this.options; 
+    this.configStoreService.ngxDrpOptions = this.options; 
     this.$rangeUpdateSub = this.rangeStoreService.$rangeUpdate.subscribe(
       (range) => {
         const from:string = this.formatToDateString(range.fromDate, this.options.format);

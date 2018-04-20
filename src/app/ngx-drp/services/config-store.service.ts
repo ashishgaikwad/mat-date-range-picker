@@ -19,7 +19,7 @@ export class ConfigStoreService {
     return this._calendarDialogConfig;
   }
 
-  get ngxDropOptions():NgxDrpOptions {
+  get ngxDrpOptions():NgxDrpOptions {
     return this._ngxDrpOptions;
   }
 
@@ -27,7 +27,7 @@ export class ConfigStoreService {
     this._calendarDialogConfig = config;
   }
 
-  set ngxDropOptions(options:NgxDrpOptions) {
+  set ngxDrpOptions(options:NgxDrpOptions) {
     this._ngxDrpOptions = {...this.defaultOptions, ...options};
   }
 

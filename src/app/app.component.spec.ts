@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { NgxDrpModule } from './ngx-drp/ngx-drp.module';
 import { NgxDrpOptions } from './ngx-drp/model/model';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
