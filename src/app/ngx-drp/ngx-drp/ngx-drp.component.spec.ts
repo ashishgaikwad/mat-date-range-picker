@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgxDrpComponent } from './ngx-drp.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { CalendarOverlayService } from '../services/calendar-overlay.service';
-import { RangeStoreService } from '../services/range-store.service';
+import { RangeStoreService, DATE } from '../services/range-store.service';
 import { ConfigStoreService } from '../services/config-store.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -39,7 +39,7 @@ describe('NgxDrpComponent', () => {
       providers:[
         {provide: CalendarOverlayService, useClass: MockOverlayService},
         {provide: DomSanitizer, useClass: MockDomSanitizer},
-        {provide: Date, useValue: new Date()},
+        {provide: DATE, useValue: new Date()},
         RangeStoreService,
         ConfigStoreService,
         MatIconRegistry,

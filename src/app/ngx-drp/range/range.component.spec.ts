@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RangeComponent } from './range.component';
-import { RangeStoreService } from '../services/range-store.service';
+import { RangeStoreService, DATE } from '../services/range-store.service';
 import { ConfigStoreService } from '../services/config-store.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { OverlayRef } from '@angular/cdk/overlay';
@@ -19,7 +19,7 @@ describe('RangeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ RangeComponent ],
       providers: [
-        {provide: Date, useValue: new Date},
+        {provide: DATE, useValue: new Date},
         {provide: OverlayRef, useClass: MockOverlayRef},
         RangeStoreService,
         ConfigStoreService],

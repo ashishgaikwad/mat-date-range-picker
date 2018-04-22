@@ -1,7 +1,9 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, InjectionToken } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Range } from '../model/model';
-import { DATE } from '../ngx-drp.module';
+/* import { DATE } from '../ngx-drp.module'; */
+
+export const DATE = new InjectionToken<Date>('date');
 
 @Injectable()
 export class RangeStoreService {

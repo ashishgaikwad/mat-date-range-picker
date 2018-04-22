@@ -1,13 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
-
-import { RangeStoreService } from './range-store.service';
+import { RangeStoreService, DATE } from './range-store.service';
+import { InjectionToken } from '@angular/core';
 
 describe('RangeStoreService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        {provide: Date, useValue: new Date},
-        RangeStoreService]
+        RangeStoreService,
+        {provide: DATE, useValue: new Date()}]
     });
   });
 

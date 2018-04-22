@@ -5,7 +5,7 @@ import { RangeComponent } from './range/range.component';
 import { CalendarWrapperComponent } from './calendar-wrapper/calendar-wrapper.component';
 import { PresetsComponent } from './presets/presets.component';
 import { CalendarOverlayService } from './services/calendar-overlay.service';
-import { RangeStoreService } from './services/range-store.service';
+import { RangeStoreService, DATE } from './services/range-store.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -18,8 +18,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ConfigStoreService } from './services/config-store.service';
 import { HttpClientModule } from '@angular/common/http';
-
-export const DATE = new InjectionToken<Date>('date');
 
 @NgModule({
   imports: [
