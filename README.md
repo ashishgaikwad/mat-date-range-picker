@@ -1,4 +1,6 @@
-[![CircleCI](https://circleci.com/gh/ashishgaikwad/mat-date-range-picker.svg?style=shield)](https://circleci.com/gh/ashishgaikwad/mat-date-range-picker) [![Maintainability](https://api.codeclimate.com/v1/badges/c4d8934c1cae702aacaa/maintainability)](https://codeclimate.com/github/ashishgaikwad/mat-date-range-picker/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c4d8934c1cae702aacaa/test_coverage)](https://codeclimate.com/github/ashishgaikwad/mat-date-range-picker/test_coverage)
+[![CircleCI](https://circleci.com/gh/ashishgaikwad/mat-date-range-picker.svg?style=shield)](https://circleci.com/gh/ashishgaikwad/mat-date-range-picker) [![Maintainability](https://api.codeclimate.com/v1/badges/c4d8934c1cae702aacaa/maintainability)](https://codeclimate.com/github/ashishgaikwad/mat-date-range-picker/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c4d8934c1cae702aacaa/test_coverage)](https://codeclimate.com/github/ashishgaikwad/mat-date-range-picker/test_coverage) 
+![Angular_Version 5](https://img.shields.io/badge/Angular_Version-5-brightgreen.svg)
 
 # MatDateRangePicker
 
