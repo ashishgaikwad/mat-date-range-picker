@@ -42,7 +42,7 @@ jobs:
       # run tests!
       - run:
           name: Run unit tests
-          command: npm run test --single-run --no-progress
+          command: npm run test
       
       # Production build
       - run:
