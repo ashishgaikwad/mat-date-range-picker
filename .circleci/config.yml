@@ -57,8 +57,9 @@ jobs:
       # run tests!
       - run:
           name: Run unit tests
-          command: npm test --code-coverage
-          ./tmp/cc-test-reporter format-coverage -t lcov -o tmp/codeclimate.frontend.json coverage/lcov.info
+          command: |
+            npm test --code-coverage
+            ./tmp/cc-test-reporter format-coverage -t lcov -o tmp/codeclimate.frontend.json coverage/lcov.info
       
       # upload test results to Code Climate
       - run:
