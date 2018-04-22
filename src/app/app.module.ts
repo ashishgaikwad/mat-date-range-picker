@@ -12,7 +12,7 @@ import { NgxDrpModule } from './ngx-drp/ngx-drp.module';
     BrowserModule,
     NgxDrpModule
   ],
-  providers:[{provide:Date, useValue: new Date()}],
+  /* providers:[{provide:Date, useValue: new Date()}], */
   bootstrap: [AppComponent]
 })
 export class AppModule { }

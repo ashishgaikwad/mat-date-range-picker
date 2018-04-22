@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxDrpComponent } from './ngx-drp/ngx-drp.component';
 import { RangeComponent } from './range/range.component';
@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ConfigStoreService } from './services/config-store.service';
 import { HttpClientModule } from '@angular/common/http';
+
+export const DATE = new InjectionToken<Date>('date');
 
 @NgModule({
   imports: [
@@ -44,7 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
       CalendarOverlayService,
       RangeStoreService,
       ConfigStoreService,
-      {provide:Date, useValue: new Date()}
+      {provide:DATE, useValue: new Date()}
   ],
   //bootstrap: [NgxDrpComponent],
   entryComponents:[RangeComponent],

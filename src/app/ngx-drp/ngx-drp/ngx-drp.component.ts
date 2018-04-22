@@ -23,8 +23,8 @@ export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewChecked {
   @ViewChild('calendarInput') calendarInput;
   @Output() readonly selectedDateRangeChanged: EventEmitter<Range> = new EventEmitter<Range>();
   @Input() options:NgxDrpOptions;
-  private $rangeUpdateSub:Subscription;
-  private selectedDateRange:string = "";
+  private rangeUpdate$Sub:Subscription;
+  selectedDateRange:string = "";
 
 
   constructor(
@@ -43,7 +43,7 @@ export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   ngOnInit() {
     this.configStoreService.ngxDrpOptions = this.options; 
-    this.$rangeUpdateSub = this.rangeStoreService.$rangeUpdate.subscribe(
+    this.rangeUpdate$Sub = this.rangeStoreService.rangeUpdate$.subscribe(
       (range) => {
         const from:string = this.formatToDateString(range.fromDate, this.options.format);
         const to:string = this.formatToDateString(range.toDate, this.options.format);
@@ -57,7 +57,7 @@ export class NgxDrpComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
   
   ngOnDestroy() {
-    this.$rangeUpdateSub.unsubscribe();
+    this.rangeUpdate$Sub.unsubscribe();
   }
   
   private formatToDateString(date:Date, format:string):string {

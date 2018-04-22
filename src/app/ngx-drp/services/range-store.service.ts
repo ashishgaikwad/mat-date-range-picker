@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Range } from '../model/model';
+import { DATE } from '../ngx-drp.module';
 
 @Injectable()
 export class RangeStoreService {
 
-  $rangeUpdate:Subject<Range> = new Subject<Range> ();
+  rangeUpdate$:Subject<Range> = new Subject<Range> ();
 
   constructor(
-    private _fromDate: Date,
-    private _toDate: Date
+    @Inject(DATE) private _fromDate: Date,
+    @Inject(DATE) private _toDate: Date
   ) { }
 
   /* set fromDate(fromDate:Date) {
@@ -31,7 +32,7 @@ export class RangeStoreService {
   updateRange(fromDate:Date = this._fromDate, toDate:Date = this._toDate) {
     this._fromDate = fromDate;
     this._toDate = toDate;
-    this.$rangeUpdate.next({fromDate:this._fromDate, toDate:this._toDate});
+    this.rangeUpdate$.next({fromDate:this._fromDate, toDate:this._toDate});
   }
 
 

@@ -16,7 +16,7 @@ describe('RangeStoreService', () => {
   }));
 
   it('should update the store and emit range update', inject([RangeStoreService], (service:RangeStoreService) => {
-    let rangeUpdateSub = service.$rangeUpdate.subscribe(
+    let rangeUpdateSub = service.rangeUpdate$.subscribe(
       val => {
         expect(val).toBeTruthy();
       }
