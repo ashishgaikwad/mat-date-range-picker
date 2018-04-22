@@ -20,8 +20,8 @@ jobs:
       - checkout
       # Log the current branch
       - run:
-        name: Show current branch
-        command: echo ${CIRCLE_BRANCH}
+          name: Show current branch
+          command: echo ${CIRCLE_BRANCH}
 
       # Download and cache dependencies
       - restore_cache:
@@ -31,8 +31,8 @@ jobs:
           - v1-dependencies-
 
       - run:
-        name: Install local dependencies
-        command: npm install
+          name: Install local dependencies
+          command: npm install
 
       - save_cache:
           paths:
@@ -41,17 +41,17 @@ jobs:
         
       # run tests!
       - run:
-        name: Run unit tests
-        command: npm run test
+          name: Run unit tests
+          command: npm run test
       
       # Production build
       - run:
-        name: Create prod build
-        command: npm run build
+          name: Create prod build
+          command: npm run build
 
       # Cache the dist folder for the deploy job
       - save_cache:
-        key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
-        paths:
-          - dist
+          key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - dist
       
